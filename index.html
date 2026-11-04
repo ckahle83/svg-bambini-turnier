@@ -1,0 +1,12 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#F9BD00"><title>SVG Bambini-Turnier</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="top"><div id="clubLogo" class="club-logo">SVG</div><div><small id="kicker">SV GEBERSHEIM PRÄSENTIERT</small><h1 id="title">Bambini-Turnier</h1></div><button id="adminBtn" class="admin-open">⚙ Admin</button></div><nav id="tabs" class="tabs"></nav></header>
+<div class="bar"><select id="teamFilter"><option value="">Mannschaft wählen …</option></select><button id="clearFilter" hidden>×</button></div>
+<main><div id="empty" class="empty"><b>⚽</b><h2>Noch kein Spielplan</h2><p>Im Adminbereich Mannschaften, Logos und Spielfelder einrichten.</p><button onclick="openAdmin()">Turnier einrichten</button></div><div id="track" class="track" hidden></div></main>
+<div id="dots" class="dots"></div><footer><button id="prev">‹ Feld</button><button id="allGames">Alle Spiele</button><button id="next">Feld ›</button></footer>
+<dialog id="admin"><form id="adminForm" method="dialog"><div class="admin-head"><div><small>TURNIERVERWALTUNG</small><h2>Spielplan konfigurieren</h2></div><button type="button" id="close">×</button></div>
+<section class="grid"><label>Turniername<input id="aTitle"></label><label>Datum<input id="aDate" type="date"></label><label>Startzeit<input id="aStart" type="time"></label><label>Spieldauer (Min.)<input id="aPlay" type="number" min="3"></label><label>Pause (Min.)<input id="aBreak" type="number" min="0"></label><label>Anzahl Felder<input id="aFields" type="number" min="1" max="12"></label></section>
+<label class="upload">Vereinslogo SV Gebersheim<input id="aClubLogo" type="file" accept="image/*"><span>PNG, JPG, WEBP oder SVG</span></label>
+<div class="section-head"><div><h3>Spielfelder</h3><p>Jedes Feld erhält eine eigene Überschrift, z. B. „Jahrgang 2020“.</p></div></div><div id="fieldRows"></div>
+<div class="section-head"><div><h3>Mannschaften</h3><p>Für jede Mannschaft kann ein Vereinslogo hinterlegt werden.</p></div><button type="button" id="addTeam">+ Team</button></div><div id="teamRows"></div>
+<p id="error"></p><div class="actions"><button type="button" id="reset">Zurücksetzen</button><button type="button" id="generate">Spielplan generieren</button></div></form></dialog>
+<script src="app.js"></script></body></html>
